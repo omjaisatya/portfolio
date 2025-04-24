@@ -8,7 +8,6 @@
 ## ✨ Features
 
 - Fully responsive and mobile-friendly
-- Dark mode support 🌙
 - Smooth scroll animations via Framer Motion
 - Clean UI with Tailwind CSS
 - Sections: About, Tech Stack, Journey, Projects, Contact
