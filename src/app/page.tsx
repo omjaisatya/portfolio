@@ -1,103 +1,156 @@
-import Image from "next/image";
+import About from "./about/page";
+import { Sparkles, Code, Rocket } from "lucide-react";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen px-4 sm:px-6 md:px-12 py-16 sm:py-20 flex flex-col items-center gap-24 w-full">
+      <section className="w-full text-center px-4 sm:px-8">
+        <div className="flex justify-center items-center gap-2 mb-4 text-amber-500">
+          <Sparkles className="w-6 h-6" />
+          <span className="uppercase text-sm font-semibold">
+            Frontend Developer / Backend Developer
+          </span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
+          Welcome to My Portfolio
+        </h1>
+        <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto">
+          I am a graduate student of Computer Science and Engineering from
+          Maharshi Dayanand University, Rohtak. I am passionate about Computer
+          Science and I love exploring new technologies. I am a quick learner
+          and a team player.
+        </p>
+      </section>
+
+      <section id="about" className="w-full px-4 sm:px-8">
+        <div className="max-w-5xl mx-auto text-center">
+          <About />
+        </div>
+      </section>
+
+      <section className="w-full px-4 sm:px-8 text-center">
+        <div className="flex justify-center items-center gap-2 mb-4 text-blue-600">
+          <Code className="w-6 h-6" />
+          <h2 className="text-3xl font-semibold">My Tech Stack</h2>
+        </div>
+        <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-4">
+          I build scalable, responsive UIs with:
+        </p>
+        <ul className="flex flex-wrap justify-center gap-4 text-sm sm:text-base text-white">
+          {[
+            "React",
+            "Next.js",
+            "Tailwind CSS",
+            "TypeScript",
+            "JavaScript",
+            "React Native",
+            "Git",
+            "Nodejs",
+            "Express",
+            "MongoDB",
+          ].map((skill) => (
+            <li
+              key={skill}
+              className="bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600 transition"
+            >
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="w-full px-4 sm:px-8 text-center">
+        <div className="flex justify-center items-center gap-2 mb-4 text-green-600">
+          <Rocket className="w-6 h-6" />
+          <h2 className="text-3xl font-semibold">My Journey</h2>
+        </div>
+        <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
+          I started by turning sketches into HTML in high school. Since then,
+          I’ve explored the world of frontend development—building passion
+          projects, contributing to open source, and constantly learning. I love
+          the feeling of turning an idea into an experience people can interact
+          with.
+        </p>
+      </section>
+
+      <section id="projects" className="text-center w-full">
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/projects"
+          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full text-lg sm:text-xl font-medium hover:bg-blue-700 transition-all"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          See My Projects →
         </a>
+      </section>
+
+      <section className="w-full px-4 sm:px-8">
+        <h2 className="text-3xl font-semibold text-center mb-10 text-purple-600">
+          My Timeline
+        </h2>
+        <ol className="relative border-l border-gray-300 dark:border-gray-700 max-w-4xl mx-auto">
+          {[
+            {
+              year: "2021",
+              title: "Started Learning HTML & CSS",
+              description:
+                "Created my first static website with raw HTML and CSS.",
+            },
+            {
+              year: "2022",
+              title: "Discovered JavaScript",
+              description:
+                "Began building interactive features and small web apps.",
+            },
+            {
+              year: "2023",
+              title: "Built First React App",
+              description: "Fell in love with components and state management.",
+            },
+            {
+              year: "2023",
+              title: "Learned TypeScript & Tailwind",
+              description:
+                "Started writing strongly typed, scalable frontend code.",
+            },
+            {
+              year: "2024–2024",
+              title:
+                "Started Internship at Alnac It Pvt. Ltd. (Octaworld) Company",
+              description:
+                "Gained real-world experience in a fast-paced environment.",
+            },
+          ].map((item, index) => (
+            <li key={index} className="mb-10 ml-4">
+              <div className="absolute w-3 h-3 bg-purple-600 rounded-full -left-1.5 border border-white dark:border-gray-900"></div>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
+                {item.year}
+              </time>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                {item.title}
+              </h3>
+              <p className="text-base font-normal text-gray-600 dark:text-gray-300">
+                {item.description}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section id="contact" className="text-center w-full px-4 sm:px-8">
+        <h3 className="text-2xl sm:text-3xl font-semibold mb-2">
+          Want to work together?
+        </h3>
+        <p className="mb-4 text-gray-600 dark:text-gray-400">
+          Let’s create something amazing.
+        </p>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="mailto:satyaprakash451256@proton.me"
+          className="bg-amber-500 text-white px-6 py-3 rounded-full hover:bg-amber-600 transition"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+          Get In Touch
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+      <Footer />
+    </main>
   );
 }
