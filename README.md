@@ -2,7 +2,6 @@
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Icons**: [Lucide React](https://lucide.dev/)
 
 ## ✨ Features

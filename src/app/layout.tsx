@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
-import { AnimatePresence } from "framer-motion";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +30,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300`}
       >
         <Header />
-        <AnimatePresence mode="wait">
-          <main className="w-full min-h-screen">{children}</main>
-        </AnimatePresence>
+
+        <main className="w-full min-h-screen">{children}</main>
       </body>
     </html>
   );
